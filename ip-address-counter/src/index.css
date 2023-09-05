@@ -9,3 +9,7 @@
 * {
   font-family: var(--font-family);
 }
+
+.bg-image{
+  background-image: url(../public/pattern-bg-desktop.png);
+}

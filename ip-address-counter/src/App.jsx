@@ -1,11 +1,10 @@
 import Map from "./components/Map";
 import Overlay from "./components/Overlay";
-import { MapValuesProvider } from "./hooks/mapContextProvider";
+import { MapValuesProvider } from "./context/mapContextProvider";
 function App() {
   return (
     <MapValuesProvider>
-      <main className="relative w-full">
-        <img src="./pattern-bg-desktop.png" alt="a patterned background" />
+      <main className="bg-image relative bg-cover bg-no-repeat w-full h-72">
         <Overlay />
       </main>
       <Map />

@@ -1,21 +1,27 @@
+import { useMapContext } from "../context/mapContextProvider";
+
 function Details() {
+  const { iPAddress, state, country, timeZone, isp } = useMapContext();
+
   return (
-    <div className="details-container flex gap-16 justify-between w-[60%] py-4 px-8 h-24 items-center  rounded-md bg-white shadow-lg shadow-black-500/50 ">
+    <div className="details-container flex gap-16 justify-center w-[60%] py-4 px-4 h-24 items-center  rounded-md bg-white shadow-lg shadow-black-500/50 ">
       <section className="detail-bloc border-r-2 pr-6 border-r-darkGray">
         <p className="text-xs font-bold text-darkGray">IP ADDRESS</p>
-        <p className="text-base font-bold ">192.TEMP.174</p>
+        <p className="text-base font-bold ">{iPAddress || "192.TEMP.674"}</p>
       </section>
       <section className="detail-bloc border-r-2 pr-6 border-r-darkGray">
         <p className="text-xs font-bold text-darkGray">LOCATION</p>
-        <p className="text-base font-bold">TEMP.LOCATION</p>
+        <p className="text-base font-bold">
+          {state || "TEMP.LOCATION"} - {country || "Country"}
+        </p>
       </section>
       <section className="detail-bloc border-r-2 pr-6 border-r-darkGray">
         <p className="text-xs font-bold text-darkGray">TIMEZONE</p>
-        <p className="text-base font-bold">UTC.05:00</p>
+        <p className="text-base font-bold">{timeZone || "UTC.05:00"}</p>
       </section>
       <section className="detail-bloc">
         <p className="text-xs font-bold text-darkGray">ISP</p>
-        <p className="text-base font-bold">SpaceX STarlink</p>
+        <p className="text-base font-bold">{isp || "ISP"}</p>
       </section>
     </div>
   );
