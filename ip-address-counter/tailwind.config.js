@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        veryDarkGray: "hsl(0, 0%, 17%)",
+        darkGray: "hsl(0, 0%, 59%)",
+      },
+      fontFamily: {
+        rubik: "Rubik, sans-serif",
+      },
+    },
   },
   plugins: [],
 };
