@@ -11,5 +11,9 @@
 }
 
 .bg-image{
-  background-image: url(../public/pattern-bg-desktop.png);
+  background-image: url(/pattern-bg-desktop.png);
+}
+.leaflet-container{
+  height: 80dvh;
+  z-index: 0;
 }

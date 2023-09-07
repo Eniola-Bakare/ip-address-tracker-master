@@ -1,7 +1,7 @@
 import { useMapContext } from "../context/mapContextProvider";
 
 function Search() {
-  const { ipSearch, setIpSearch, fetchData } = useMapContext();
+  const { ipSearch, setIpSearch, fetchData, setLat, setLng } = useMapContext();
 
   return (
     <div className="flex flex-col w-8/12 justify-between items-center ">
