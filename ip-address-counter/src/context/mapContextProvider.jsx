@@ -6,33 +6,27 @@ const MapValuesContext = createContext();
 function MapValuesProvider({ children }) {
   const [ipSearch, setIpSearch] = useState("");
   const [iPAddress, setIpAddress] = useState("");
-  const [state, setState] = useState("");
+  const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [timeZone, setTimeZone] = useState("");
   const [isp, setIsp] = useState("");
 
-  const [lat, setLat] = useState("");
-  const [lng, setLng] = useState("");
-  const position = [lat, lng];
+  const [lat, setLat] = useState(31.9686);
+  const [lng, setLng] = useState(99.9018);
 
-  const url = `https://geo.ipify.org/api/v2/country?apiKey=${API_KEY}`;
+  const url = `
+  https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
 
   function setData(data) {
     if (data.code) return alert(data.messages);
 
-    // console.log(data);
     setIpAddress(data.ip);
     setTimeZone(data.location.timezone);
-    setState(data.location.region);
+    setCity(data.location.city);
+    setLat(data.location.lat)
+    setLng(data.location.lng)
     setCountry(data.location.country);
     setIsp(data.isp);
-  }
-
-  function displayMap(position) {
-    const { latitude, longitude } = position.coords;
-    setLat(latitude);
-    setLng(longitude);
-    // console.log(lat, lng);
   }
 
   function fetchData(e) {
@@ -46,28 +40,24 @@ function MapValuesProvider({ children }) {
         .then((data) => setData(data));
     }
 
-    const getUserWhere = navigator.geolocation.getCurrentPosition(
-      displayMap,
-      (error) => confirm(error.message)
-    );
   }
   useEffect(() => {
     fetchData();
   }, []);
+  
   return (
     <MapValuesContext.Provider
       value={{
         ipSearch,
         setIpSearch,
         iPAddress,
-        state,
+        city,
         country,
         timeZone,
         isp,
         fetchData,
-        position,
-        setLat,
-        setLng,
+        lat,
+        lng,
       }}
     >
       {children}
