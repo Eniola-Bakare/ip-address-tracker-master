@@ -9,7 +9,7 @@ function MapComponent() {
 
   return (
     <div className="">
-      <MapContainer center={mapPosition} zoom={1} scrollWheelZoom={false}>
+      <MapContainer center={mapPosition} zoom={5} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -18,6 +18,7 @@ function MapComponent() {
           <Popup>This IP address is at {city || 'Temp.location'}.</Popup>
         </Marker>
 
+        <ChangeCenter position={[lat || 40, lng || 0]} />
       </MapContainer>
     </div>
   );

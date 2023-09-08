@@ -4,7 +4,7 @@ function Search() {
   const { ipSearch, setIpSearch, fetchData, setLat, setLng } = useMapContext();
 
   return (
-    <div className="flex flex-col w-8/12 justify-between items-center ">
+    <div className="flex flex-col w-11/12 sm:w-8/12 justify-between items-center sm:mb-0">
       <p className="text-white text-[18px] font-medium mb-2">
         IP Address Tracker
       </p>

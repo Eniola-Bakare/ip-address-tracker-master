@@ -1,6 +1,7 @@
 import MapComponent from "./components/MapComponent";
 import Overlay from "./components/Overlay";
-import { MapValuesProvider } from "./context/mapContextProvider";
+
+
 function App() {
   return (
     <>
