@@ -11,7 +11,7 @@ function Search() {
       <section className="search-bar w-8/12 flex items-center justify-center ">
         <input
           type="text"
-          placeholder="Search for any IP address or domain"
+          placeholder="Search for any IP address..."
           className="w-8/12 h-12 rounded-l-md p-2 text-sm pl-4"
           value={ipSearch}
           onChange={(e) => setIpSearch(e.target.value)}
