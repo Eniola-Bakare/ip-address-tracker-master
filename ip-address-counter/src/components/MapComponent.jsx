@@ -1,11 +1,17 @@
 import { useMapContext } from "../context/mapContextProvider";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useEffect } from "react";
+import { Icon } from "leaflet";
 
 function MapComponent() {
   const { lat, lng, city } = useMapContext();
   const mapPosition = [lat, lng];
+
+  const customIcon = new Icon({
+    // iconUrl: "/icon-location.svg",
+    iconUrl: "/location-pin.png",
+    iconSize: [38, 38],
+  });
 
   return (
     <div className="">
@@ -14,8 +20,8 @@ function MapComponent() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={mapPosition}>
-          <Popup>This IP address is at {city || 'Temp.location'}.</Popup>
+        <Marker position={mapPosition} icon={customIcon}>
+          <Popup>This IP address is at {city || "Temp.location"}.</Popup>
         </Marker>
 
         <ChangeCenter position={[lat || 40, lng || 0]} />
