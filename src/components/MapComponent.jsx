@@ -8,6 +8,10 @@ function MapComponent() {
   const mapPosition = [lat, lng];
 
   const customIcon = new Icon({
+<<<<<<< HEAD
+=======
+    // iconUrl: "/icon-location.svg",
+>>>>>>> 8210bca85c35ff2d913987cce523bfa12f620491
     iconUrl: "/location-pin.png",
     iconSize: [38, 38],
   });
@@ -17,7 +21,11 @@ function MapComponent() {
       <MapContainer center={mapPosition} zoom={5} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+<<<<<<< HEAD
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+=======
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+>>>>>>> 8210bca85c35ff2d913987cce523bfa12f620491
         />
         <Marker position={mapPosition} icon={customIcon}>
           <Popup>This IP address is at {city || "Temp.location"}.</Popup>
