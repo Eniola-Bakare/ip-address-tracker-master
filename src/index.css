@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-family: "Rubik", sans-serif;
+}
+
+* {
+  font-family: var(--font-family);
+}
+
+.bg-image{
+  background-image: url(/pattern-bg-desktop.png);
+}
+.leaflet-container{
+  height: 80dvh;
+  z-index: 0;
+}
