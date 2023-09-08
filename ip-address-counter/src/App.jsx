@@ -1,7 +1,6 @@
 import MapComponent from "./components/MapComponent";
 import Overlay from "./components/Overlay";
 
-
 function App() {
   return (
     <>
