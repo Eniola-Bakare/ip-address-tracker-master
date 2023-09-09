@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { API_KEY } from "../constants";
+// import { API_KEY } from "../constants";
 
 const MapValuesContext = createContext();
 
@@ -15,7 +15,7 @@ function MapValuesProvider({ children }) {
   const [lng, setLng] = useState(99.9018);
 
   const url = `
-  https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
+  https://geo.ipify.org/api/v2/country,city?apiKey=${import.meta.env.VITE_API_KEY}`;
 
   function setData(data) {
     if (data.code) return alert(data.messages);
