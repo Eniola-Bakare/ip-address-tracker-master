@@ -10,10 +10,16 @@
   font-family: var(--font-family);
 }
 
-.bg-image{
-  background-image: url(/pattern-bg-desktop.png);
+.bg-image {
+  background-image: url(/pattern-bg-mobile.png);
 }
-.leaflet-container{
+.leaflet-container {
   height: 80dvh;
   z-index: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .bg-image {
+    background-image: url(/pattern-bg-desktop.png);
+  }
 }
