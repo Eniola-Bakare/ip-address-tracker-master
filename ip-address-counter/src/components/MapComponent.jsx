@@ -8,7 +8,6 @@ function MapComponent() {
   const mapPosition = [lat, lng];
 
   const customIcon = new Icon({
-    // iconUrl: "/icon-location.svg",
     iconUrl: "/location-pin.png",
     iconSize: [38, 38],
   });

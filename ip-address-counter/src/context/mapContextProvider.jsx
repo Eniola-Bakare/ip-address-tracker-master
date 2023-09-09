@@ -23,28 +23,34 @@ function MapValuesProvider({ children }) {
     setIpAddress(data.ip);
     setTimeZone(data.location.timezone);
     setCity(data.location.city);
-    setLat(data.location.lat)
-    setLng(data.location.lng)
+    setLat(data.location.lat);
+    setLng(data.location.lng);
     setCountry(data.location.country);
     setIsp(data.isp);
   }
 
   function fetchData(e) {
     if (ipSearch != "" && ipSearch != null) {
-      fetch(`${url}&ipAddress=${ipSearch}`)
-        .then((res) => res.json())
-        .then((data) => setData(data));
-    } else {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => setData(data));
-    }
-
+      let search = ipSearch.substring(0, 7);
+      if (isNaN(search)) {
+        fetch(`${url}&domain=${ipSearch}`)
+          .then((res) => res.json())
+          .then((data) => setData(data));
+      } else if (!isNaN(search)) {
+        fetch(`${url}&ipAddress=${ipSearch}`)
+          .then((res) => res.json())
+          .then((data) => setData(data));
+        }
+      } else {
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => setData(data));
+      }
   }
   useEffect(() => {
     fetchData();
   }, []);
-  
+
   return (
     <MapValuesContext.Provider
       value={{

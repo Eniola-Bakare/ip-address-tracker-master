@@ -4,7 +4,7 @@ function Details() {
   const { iPAddress, city, country, timeZone, isp } = useMapContext();
 
   return (
-    <div className="details-container flex items-center sm:justify-around flex-col sm:flex-row py-2 sm:py-4 sm:px-4 sm:h-24 sm:items-center  rounded-md bg-white shadow-lg shadow-black-500/50 z-50 w-[60%] sm:w-[85%] xl:w-[70%] ">
+    <div className="details-container flex items-center sm:justify-around flex-col sm:flex-row py-2 sm:py-4 sm:px-4 sm:h-24 sm:items-center  rounded-md bg-white shadow-lg shadow-black-500/50 z-50 w-9/12 sm:w-[85%] xl:w-[70%] ">
       <section className="detail-bloc flex flex-col w-[100%] items-center py-2 border-b sm:border-b-0 sm:border-r-2 border-r-darkGray">
         <p className="text-xs font-bold text-darkGray">IP ADDRESS</p>
         <p className="text-xs text-center md:text-base font-bold ">
