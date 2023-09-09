@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { API_KEY } from "../../ip-address-counter/src/constants";
+import { API_KEY } from "../constants";
 
 const MapValuesContext = createContext();
 
