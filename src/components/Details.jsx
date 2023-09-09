@@ -26,7 +26,9 @@ function Details() {
       </section>
       <section className="detail-bloc flex flex-col w-[100%] items-center py-2">
         <p className="text-xs font-bold text-darkGray">ISP</p>
-        <p className="text-xs text-center md:text-base font-bold">{isp || "ISP"}</p>
+        <p className="text-xs text-center md:text-base font-bold">
+          {isp || "ISP"}
+        </p>
       </section>
     </div>
   );

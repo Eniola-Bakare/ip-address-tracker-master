@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { API_KEY } from "../constants";
+import { API_KEY } from "../../ip-address-counter/src/constants";
 
 const MapValuesContext = createContext();
 
@@ -40,12 +40,12 @@ function MapValuesProvider({ children }) {
         fetch(`${url}&ipAddress=${ipSearch}`)
           .then((res) => res.json())
           .then((data) => setData(data));
-        }
-      } else {
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => setData(data));
       }
+    } else {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setData(data));
+    }
   }
   useEffect(() => {
     fetchData();
